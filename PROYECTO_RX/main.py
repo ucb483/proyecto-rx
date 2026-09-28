@@ -30,7 +30,7 @@ app = dash.Dash(
     title="Plataforma Educativa de Rayos X",
     suppress_callback_exceptions=True
 )
-
+server = app.server
 
 app.layout = crear_layout()
 
