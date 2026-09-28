@@ -1,0 +1,13 @@
+dash
+plotly
+numpy
+scipy
+scikit-image
+pillow
+python-dotenv
+google.genai
+google-generativeai
+huggingface_hub
+pypdf
+matplotlib
+gunicorn
