@@ -1,6 +1,0 @@
-- Sistemas Película-Pantalla (Film-Screen):
-  * La película fotográfica es ineficiente para detener rayos X directamente (solo 1-2%). Por ello se intercala entre dos pantallas intensificadoras de fósforo (fósforos fluorescentes como CaWO4 o tierras raras) dentro de un casete radiográfico.
-  * Las pantallas convierten cada fotón de rayos X en múltiples fotones de luz visible, aumentando la sensibilidad del sistema en más de 50 veces y reduciendo drásticamente la dosis al paciente.
-- Intensificador de Imagen de Rayos X (XRII - Fluoroscopia):
-  * Utilizado en fluoroscopia para visualización continua en tiempo real a bajas corrientes de tubo (0.5 - 5.0 mA).
-  * Estructura: Ventana de entrada de Al/Ti -> Fósforo de entrada de CsI(Na) -> Fotocátodo (emite electrones por luz) -> Electrodos de aceleración/enfoque con alto voltaje (25-35 kV) -> Ánodo y Fósforo de salida (P20) -> Lente, divisor de haz (beam splitter) y cámara de TV / monitor.
