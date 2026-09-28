@@ -1,0 +1,14 @@
+- Ecuación Básica de Formación de Imagen:
+  * La intensidad transmitida registrada en cada punto 2D (x,y) del detector representa la integral de línea del coeficiente de atenuación mu a lo largo del trayecto del haz divergente: I(x,y) = integral S0(E) * E * exp( - integral mu(s; E, x, y) ds ) dE.
+- Efectos Geométricos:
+  1. Ley del Cuadrado Inverso: Disminución de la intensidad I proporcional a 1/r^2 a medida que aumenta la distancia fuente-detector d.
+  2. Oblicuidad: Caída de la intensidad en la periferia del detector plano debido al ángulo de incidencia no ortogonal (variación proporcional a cos^3(theta)).
+  3. Efecto Talón del Ánodo (Anode Heel Effect): La intensidad del haz es significativamente mayor hacia el lado del CÁTODO que hacia el ÁNODO (hasta un 45% de variación) debido a la auto-absorción de fotones dentro del propio material del ánodo. Regla de posicionamiento: colocar las partes anatómicas más gruesas hacia el lado del cátodo.
+  4. Ampliación/Magnificación Dependiente de la Profundidad: M(z) = d / z, donde d es la distancia fuente-detector y z es la distancia fuente-objeto.
+- Fuentes de Desenfoque (Blurring) y Degradación Espacial:
+  * Penumbra por Fuente Extendida: El tamaño finito del punto focal del ánodo (D) produce desenfoque de bordes por convolución de la forma de la fuente m(z) = -(d-z)/z con el objeto.
+  * Desenfoque del Detector/Centellador: Difusión de luz en la capa fluorescente/centelladora. Se caracteriza por la Función de Dispersión de Puntos (PSF - Point Spread Function) y la Función de Transferencia de Modulación (MTF).
+  * Compromiso (Trade-off) Eficiencia vs Resolución: Pantallas más gruesas tienen mayor eficiencia de detección eta (menos ruido), pero peor resolución espacial. Pantallas más delgadas ofrecen mejor resolución pero aumentan el ruido cuántico.
+- Característica de Película Fotográfica:
+  * Densidad Óptica D = log10(Ii / It). Rango óptico visible humano: 1.0 < D < 1.5.
+  * Curva H&D (Hurter & Driffield): Curva sigmoidea en S (zonas: talón/toe, región lineal, hombro/shoulder, niebla base). Pendiente lineal Gamma = contraste de la película; rango de exposición lineal = latitud.

@@ -1,0 +1,6 @@
+- Procesamiento Digital de Imágenes Radiográficas:
+  * Las imágenes digitales poseen un rango dinámico mucho mayor que las películas (hasta 16 bits/píxel, 65,536 niveles de gris).
+  * Operaciones de Ajuste: Manipulación de ventana y nivel (Window/Level), control de brillo, contraste y corrección de histograma.
+  * Algoritmos Avanzados: Realce de bordes, filtrado de ruido, y Diagnóstico Asistido por Computadora (CAD - Computer-Aided Diagnosis) para detección automática de microcalcificaciones o nódulos.
+  * Angiografía por Sustracción Digital (DSA - Digital Subtraction Angiography): Se captura una imagen de máscara pre-contraste y se resta digitalmente de las imágenes pos-contraste yodado, eliminando completamente las estructuras óseas/tejidos y aislando los vasos sanguíneos.
+  * Reconstrucción Tomográfica: Algoritmos iterativos y de retroproyección filtrada aplicados en tomosíntesis y TC.

@@ -1,0 +1,1821 @@
+/* ============================================================
+   TIPOGRAFÍA GLOBAL Y AJUSTES BASE — REDISEÑO AESTHETIC PASTEL
+   Mismo contenido y funcionalidad; solo se refina la presentación.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+body,
+#react-entry-point,
+.dash-app-content {
+    font-family: 'Lora', Georgia, serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+/* Tipografía elegante para títulos y encabezados */
+h1, h2, h3, h4,
+.teoria-section-title,
+.teoria-card-title,
+.teoria-visual-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+}
+
+/* Párrafos de texto informativo: justificados, bien espaciados */
+.teoria-intro,
+.teoria-card-body p,
+.teoria-highlight p,
+.teoria-formula-text,
+.teoria-visual-text p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    hyphens: auto !important;
+}
+
+/* Barra de desplazamiento discreta, acorde a la paleta pastel */
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F7F3 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #A9D4C0 !important;
+    border-radius: 999px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5E8776 !important;
+}
+
+/* Foco accesible y sutil para navegación por teclado */
+a:focus-visible,
+button:focus-visible,
+.menu-item:focus-visible,
+.teoria-tab:focus-visible,
+.teoria-tab-selected:focus-visible {
+    outline: 2px solid #5E8776 !important;
+    outline-offset: 2px !important;
+}
+
+/* Selección de texto acorde a la paleta */
+::selection {
+    background: #A9D4C0 !important;
+    color: #1C2A25 !important;
+}
+
+/* ------------------------------------------------------------
+   BOTONES — comportamiento e interacción consistentes
+   (los colores propios de cada botón se conservan; solo se
+   añaden transición, elevación suave y un hover delicado)
+   ------------------------------------------------------------ */
+
+button {
+    font-family: 'Lora', Georgia, serif !important;
+    letter-spacing: 0.2px !important;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease !important;
+    box-shadow: 0 2px 8px rgba(94, 135, 118, 0.16) !important;
+}
+
+button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 18px rgba(94, 135, 118, 0.22) !important;
+    filter: brightness(1.03) !important;
+}
+
+button:active {
+    transform: translateY(0) !important;
+    filter: brightness(0.97) !important;
+}
+
+/* Botón sin estilo en línea propio (ej. "Consultar IA"):
+   recibe una apariencia coherente con el resto de la plataforma */
+button:not([style]) {
+    background: linear-gradient(135deg, #A9D4C0 0%, #74B899 100%) !important;
+    color: #1C2A25 !important;
+    border: 1px solid #5E8776 !important;
+    border-radius: 12px !important;
+    padding: 12px 22px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+}
+
+button:not([style]):hover {
+    border-color: #2B3A35 !important;
+}
+
+/* ------------------------------------------------------------
+   INPUTS, SELECTORES Y DROPDOWNS — apariencia suave y limpia
+   ------------------------------------------------------------ */
+
+input,
+textarea,
+.Select-control,
+.dash-dropdown .Select-control {
+    font-family: 'Lora', Georgia, serif !important;
+    border-radius: 10px !important;
+    transition: box-shadow 0.18s ease, border-color 0.18s ease !important;
+}
+
+button.dash-dropdown,
+button.dash-dropdown:hover,
+button.dash-dropdown:focus-visible,
+button.dash-dropdown[data-state="open"] {
+    background: rgb(252, 244, 235) !important;
+    background-image: none !important;
+    color: #2B3A35 !important;
+}
+
+input:focus,
+textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(169, 212, 192, 0.55) !important;
+    border-color: #5E8776 !important;
+}
+
+/* ------------------------------------------------------------
+   TARJETAS DE INICIO Y TARJETAS DE INDICADOR
+   ------------------------------------------------------------ */
+
+.home-card {
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        background-color 0.22s ease !important;
+}
+
+.home-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: #5E8776 !important;
+    box-shadow: 0 14px 28px rgba(94, 135, 118, 0.20) !important;
+}
+
+.stat-card {
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px) !important;
+    border-color: #5E8776 !important;
+    box-shadow: 0 8px 16px rgba(94, 135, 118, 0.16) !important;
+}
+
+/* ============================================================
+   MENÚ LATERAL
+   ============================================================ */
+
+.menu-item {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    padding: 12px 13px !important;
+    margin-bottom: 4px !important;
+
+    border-radius: 8px !important;
+
+    color: #2B3A35 !important;
+
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
+
+.menu-item:hover {
+    background-color: #A9D4C0 !important;
+
+    color: #2B3A35 !important;
+
+    transform: translateX(4px) !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.20) !important;
+}
+
+
+/* ============================================================
+   ICONOS
+   ============================================================ */
+
+.menu-icono {
+    flex-shrink: 0 !important;
+
+    width: 28px !important;
+    min-width: 28px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 17px !important;
+    line-height: 1 !important;
+
+    text-align: center !important;
+
+    transition:
+        transform 0.2s ease !important;
+}
+
+
+.menu-item:hover .menu-icono {
+    transform: scale(1.12) !important;
+}
+
+
+/* ============================================================
+   TEXTO
+   ============================================================ */
+
+.menu-texto {
+    flex: 1 !important;
+
+    font-size: 13px !important;
+
+    letter-spacing: 0.2px !important;
+
+    line-height: 1.4 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* ============================================================
+   LINK
+   ============================================================ */
+
+.menu-item,
+.menu-item:hover,
+.menu-item:focus,
+.menu-item:active {
+    text-decoration: none !important;
+}
+
+/* ============================================================
+   INDICADOR DE ENLACE AL PASAR SOBRE EL TEXTO
+   ============================================================ */
+
+.menu-texto {
+    transition:
+        color 0.2s ease,
+        text-decoration 0.2s ease,
+        transform 0.2s ease !important;
+}
+
+.menu-item:hover .menu-texto {
+    color: #1C2A25 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    transform: translateX(2px) !important;
+}
+
+/* ============================================================
+   BOTONES "EXPLORAR →"
+   ============================================================ */
+
+.explorar-link {
+    display: inline-block !important;
+    color: #5E8776 !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        letter-spacing 0.2s ease !important;
+
+    cursor: pointer !important;
+}
+
+.explorar-link:hover {
+    color: #1C2A25 !important;
+    transform: translateX(6px) scale(1.03) !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* ============================================================
+   PESTAÑAS DE FUNDAMENTOS DE RAYOS X
+   ============================================================ */
+
+.teoria-tab {
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease !important;
+
+    cursor: pointer !important;
+}
+
+.teoria-tab:hover {
+    transform: translateY(-4px) !important;
+    background-color: #A9D4C0 !important;
+    border-color: #5E8776 !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.20) !important;
+}
+
+.teoria-tab-selected:hover {
+    transform: translateY(-4px) !important;
+    background-color: #2B3A35 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ============================================================
+   PESTAÑAS — FUNDAMENTOS DE RAYOS X
+   ============================================================ */
+
+.teoria-tabs {
+    background: #F1F7F3 !important;
+    border: none !important;
+    border-radius: 18px !important;
+    padding: 12px !important;
+    margin-bottom: 30px !important;
+    box-sizing: border-box !important;
+}
+
+/* Distribución uniforme de las 6 pestañas */
+.teoria-tabs .tab-container {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+/* Todas las pestañas */
+.teoria-tabs .teoria-tab,
+.teoria-tabs .teoria-tab-selected {
+    min-width: 0 !important;
+    height: 88px !important;
+    box-sizing: border-box !important;
+
+    border-radius: 14px !important;
+
+    padding: 12px 10px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-family: 'Lora', Georgia, serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+
+    cursor: pointer !important;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease !important;
+}
+
+/* Estado normal */
+.teoria-tabs .teoria-tab {
+    background: rgb(255, 251, 247) !important;
+    color: #2B3A35 !important;
+
+    border: 1px solid #A9D4C0 !important;
+
+    box-shadow: none !important;
+}
+
+/* Hover de una pestaña NO seleccionada */
+.teoria-tabs .teoria-tab:hover {
+    background: #A9D4C0 !important;
+    color: #1C2A25 !important;
+
+    border-color: #5E8776 !important;
+
+    transform: translateY(-4px) !important;
+
+    box-shadow:
+        0 0 0 1px #5E8776,
+        0 9px 22px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Pestaña seleccionada */
+.teoria-tabs .teoria-tab-selected {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #5E8776 !important;
+    border-bottom: 4px solid #5E8776 !important;
+
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* ⭐ Hover incluso sobre la pestaña seleccionada */
+.teoria-tabs .teoria-tab-selected:hover {
+    background: #3A4A43 !important;
+    color: #FFFFFF !important;
+
+    border-color: #1C2A25 !important;
+    border-bottom-color: #5E8776 !important;
+
+    transform: translateY(-4px) !important;
+
+    box-shadow:
+        0 0 0 2px #5E8776,
+        0 0 20px rgba(233, 228, 214, 0.45),
+        0 10px 25px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Iconos uniformes */
+.teoria-tabs .teoria-tab > div,
+.teoria-tabs .teoria-tab-selected > div {
+    font-family:
+        "Segoe UI Symbol",
+        "Arial Unicode MS",
+        Arial,
+        sans-serif !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+/* Adaptación para pantallas medianas */
+@media (max-width: 1050px) {
+    .teoria-tabs .tab-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Adaptación para celular */
+@media (max-width: 650px) {
+    .teoria-tabs .tab-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* ============================================================
+   PARCHE TEORÍA RX — FORZAR ESTILO DE TODAS LAS SECCIONES
+   Pegar al FINAL de assets/interfaz/menu.css
+   ============================================================ */
+
+/* CONTENEDOR */
+.teoria-container,
+.teoria-container * {
+    box-sizing: border-box !important;
+}
+
+.teoria-section {
+    width: 100% !important;
+    padding: 6px 0 40px 0 !important;
+}
+
+/* TÍTULOS */
+.teoria-section-title {
+    margin: 0 0 12px 0 !important;
+    color: #2B3A35 !important;
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+}
+
+.teoria-intro {
+    margin: 0 0 28px 0 !important;
+    color: #5E8776 !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    max-width: 980px !important;
+}
+
+/* TARJETAS: ESTA ES LA PARTE CLAVE */
+.teoria-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.teoria-card {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 22px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.16) !important;
+    overflow: hidden !important;
+    transition: all .22s ease !important;
+}
+
+.teoria-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: #5E8776 !important;
+    background: #DFF3EA !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.23) !important;
+}
+
+.teoria-card-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 0 14px 0 !important;
+}
+
+.teoria-card-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+}
+
+.teoria-card-title {
+    margin: 0 !important;
+    color: #2B3A35 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+}
+
+.teoria-card-body {
+    color: #5E8776 !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+}
+
+.teoria-card-body p {
+    margin: 0 0 10px 0 !important;
+}
+
+.teoria-card-body p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* IMÁGENES */
+.teoria-image-single {
+    width: 100% !important;
+    max-width: 920px !important;
+    margin: 26px auto !important;
+}
+
+.teoria-imagen {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 10px !important;
+    background: rgb(252, 244, 235) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+}
+
+.teoria-imagen img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 330px !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+}
+
+/* BLOQUES VISUALES */
+.teoria-visual-intro {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(234 224 210) 100%) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+}
+
+.teoria-visual-text {
+    flex: 1 1 50% !important;
+    min-width: 280px !important;
+}
+
+.teoria-visual-image {
+    flex: 1 1 42% !important;
+    min-width: 280px !important;
+}
+
+.teoria-visual-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr) !important;
+    gap: 18px !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+}
+
+.teoria-visual-panel {
+    min-width: 0 !important;
+    padding: 20px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+.teoria-visual-title {
+    margin: 0 0 14px 0 !important;
+    color: #2B3A35 !important;
+    font-size: 19px !important;
+}
+
+/* INDICADORES */
+.teoria-indicators {
+    display: grid !important;
+    grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin-top: 26px !important;
+}
+
+.teoria-indicator {
+    padding: 18px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 14px !important;
+    text-align: center !important;
+}
+
+.teoria-indicator-value {
+    display: block !important;
+    color: #2B3A35 !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+}
+
+.teoria-indicator-label {
+    display: block !important;
+    margin-top: 6px !important;
+    color: #5E8776 !important;
+    font-size: 11px !important;
+}
+
+/* FLUJOS */
+.teoria-flow {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    width: 100% !important;
+    margin: 24px 0 28px 0 !important;
+    padding: 16px !important;
+    background: #E4F0E9 !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 16px !important;
+}
+
+.teoria-flow-step {
+    min-width: 105px !important;
+    max-width: 190px !important;
+    padding: 12px 14px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 10px !important;
+    color: #2B3A35 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+}
+
+.teoria-flow-arrow {
+    color: #5E8776 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+/* FÓRMULAS */
+.teoria-formulas {
+    display: grid !important;
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin: 24px 0 !important;
+}
+
+.teoria-formula-card {
+    min-height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 9px !important;
+    padding: 16px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 14px !important;
+}
+
+.teoria-formula-symbol {
+    color: #2B3A35 !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
+}
+
+.teoria-formula-arrow {
+    color: #5E8776 !important;
+}
+
+.teoria-formula-text {
+    color: #5E8776 !important;
+    font-size: 13px !important;
+}
+
+/* INTERACTIVO */
+.teoria-interactive {
+    width: 100% !important;
+    margin-top: 26px !important;
+    padding: 24px !important;
+    background: linear-gradient(135deg, rgb(255, 251, 247) 0%, #DFF3EA 100%) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 17px !important;
+}
+
+.teoria-sliders {
+    display: grid !important;
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    gap: 20px !important;
+}
+
+.teoria-slider-box {
+    padding: 18px !important;
+    background: #F1F7F3 !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 13px !important;
+}
+
+.teoria-mas-result {
+    margin-top: 18px !important;
+    padding: 15px !important;
+    background: #2B3A35 !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+}
+
+.teoria-mas-label {
+    color: #A9D4C0 !important;
+    font-weight: 700 !important;
+}
+
+.teoria-mas-value {
+    color: #FFFFFF !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+}
+
+/* DESTACADO */
+.teoria-highlight {
+    margin-top: 24px !important;
+    padding: 22px 24px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #5E8776 !important;
+    border-left: 5px solid #5E8776 !important;
+    border-radius: 14px !important;
+}
+
+.teoria-highlight h3 {
+    margin: 0 0 8px 0 !important;
+    color: #2B3A35 !important;
+}
+
+.teoria-highlight p {
+    margin: 0 !important;
+    color: #5E8776 !important;
+    line-height: 1.7 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .teoria-grid,
+    .teoria-visual-grid,
+    .teoria-formulas,
+    .teoria-sliders,
+    .teoria-indicators {
+        grid-template-columns: 1fr !important;
+    }
+
+    .teoria-flow {
+        flex-direction: column !important;
+    }
+
+    .teoria-flow-arrow {
+        transform: rotate(90deg) !important;
+    }
+}
+
+/* ============================================================
+   AJUSTE FINAL — TEORÍA RX
+   Pegar AL FINAL de assets/interfaz/menu.css
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. PESTAÑAS DE TEORÍA
+   No saltan ni se desplazan al pasar el mouse.
+   Solo cambia suavemente el tono para indicar selección.
+   ------------------------------------------------------------ */
+
+.teoria-tabs .teoria-tab,
+.teoria-tabs .teoria-tab-selected {
+    transform: none !important;
+}
+
+.teoria-tabs .teoria-tab:hover {
+    background: #A9D4C0 !important;
+    color: #1C2A25 !important;
+    border-color: #5E8776 !important;
+    transform: none !important;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.18) !important;
+}
+
+.teoria-tabs .teoria-tab-selected:hover {
+    background: #3A4A43 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+    border-bottom-color: #5E8776 !important;
+    transform: none !important;
+    box-shadow: 0 7px 16px rgba(0,0,0,0.20) !important;
+}
+
+/* ------------------------------------------------------------
+   2. FLUJOS DE PROCESO
+   Siempre horizontales en pantalla amplia.
+   ------------------------------------------------------------ */
+
+.teoria-flow {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    min-height: 112px !important;
+    padding: 20px !important;
+    margin: 24px auto 30px auto !important;
+    background: linear-gradient(135deg, #E4F0E9 0%, rgb(255, 251, 247) 100%) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.13) !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+}
+
+.teoria-flow-step {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 120px !important;
+    max-width: 180px !important;
+    min-height: 54px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 13px 12px !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 12px !important;
+    color: #2B3A35 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10) !important;
+}
+
+.teoria-flow-step:first-child,
+.teoria-flow-step:last-child {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+.teoria-flow-arrow {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    color: #5E8776 !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+}
+
+/* ------------------------------------------------------------
+   3. TARJETAS
+   Menos movimiento: el contenido es educativo/fijo.
+   ------------------------------------------------------------ */
+
+.teoria-card:hover {
+    transform: none !important;
+    background: #DFF3EA !important;
+    border-color: #5E8776 !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18) !important;
+}
+
+/* ------------------------------------------------------------
+   4. SECCIONES: MÁS AIRE Y CENTRADO
+   ------------------------------------------------------------ */
+
+.teoria-section {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin: 0 auto !important;
+    padding: 8px 0 42px 0 !important;
+}
+
+.teoria-grid {
+    width: 100% !important;
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+    justify-items: stretch !important;
+}
+
+.teoria-formulas {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.teoria-indicators {
+    max-width: 980px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ------------------------------------------------------------
+   5. IMÁGENES: PROPORCIÓN ELEGANTE
+   ------------------------------------------------------------ */
+
+.teoria-image-single {
+    max-width: 820px !important;
+    margin: 28px auto !important;
+}
+
+.teoria-imagen img {
+    max-height: 300px !important;
+}
+
+/* ------------------------------------------------------------
+   6. PANEL INTERACTIVO CENTRADO
+   ------------------------------------------------------------ */
+
+.teoria-interactive {
+    max-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ------------------------------------------------------------
+   7. RESPONSIVE
+   En pantallas pequeñas sí permitimos que el flujo se adapte.
+   ------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .teoria-flow {
+        flex-wrap: wrap !important;
+        overflow-x: visible !important;
+    }
+
+    .teoria-flow-step {
+        flex: 1 1 150px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .teoria-flow {
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .teoria-flow-arrow {
+        transform: rotate(90deg) !important;
+    }
+
+    .teoria-flow-step {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ============================================================
+   PESTAÑAS DE TEORÍA — COMPLETAMENTE FIJAS
+   ============================================================ */
+
+.teoria-tabs .teoria-tab:hover {
+    background: rgb(255, 251, 247) !important;
+    color: #2B3A35 !important;
+    border-color: #A9D4C0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.teoria-tabs .teoria-tab-selected:hover {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+    border-bottom-color: #5E8776 !important;
+    box-shadow: 0 7px 16px rgba(0,0,0,0.20) !important;
+    transform: none !important;
+}
+
+#formacion-tabs .teoria-tab,
+#formacion-tabs .teoria-tab-selected {
+    border-width: 3px !important;
+}
+
+/* ============================================================
+   TARJETAS DE TEORÍA — SIN EFECTO AL PASAR EL MOUSE
+   ============================================================ */
+
+.teoria-card:hover {
+    transform: none !important;
+    background: rgb(255, 251, 247) !important;
+    border-color: #A9D4C0 !important;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* ============================================================
+   CORRECCIÓN DEL FLUJO HORIZONTAL — SIN RECORTE NI SCROLL
+   Pegar AL FINAL de assets/interfaz/menu.css
+   ============================================================ */
+
+.teoria-flow {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1fr) 24px
+        minmax(0, 1fr) 24px
+        minmax(0, 1fr) 24px
+        minmax(0, 1fr) 24px
+        minmax(0, 1fr) 24px
+        minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-height: 108px !important;
+    padding: 18px !important;
+    margin: 24px 0 30px 0 !important;
+    background: linear-gradient(135deg, #E4F0E9 0%, rgb(255, 251, 247) 100%) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.13) !important;
+    overflow: hidden !important;
+}
+
+.teoria-flow-step {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 58px !important;
+    padding: 11px 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 12px !important;
+    color: #2B3A35 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10) !important;
+}
+
+.teoria-flow-step:first-child,
+.teoria-flow-step:last-child {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+.teoria-flow-arrow {
+    width: 24px !important;
+    min-width: 24px !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #5E8776 !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+}
+
+/* En pantallas medianas, las cajas siguen completas pero pueden
+   reducir ligeramente su tipografía. */
+@media (max-width: 1000px) {
+    .teoria-flow {
+        grid-template-columns:
+            minmax(0, 1fr) 18px
+            minmax(0, 1fr) 18px
+            minmax(0, 1fr) 18px
+            minmax(0, 1fr) 18px
+            minmax(0, 1fr) 18px
+            minmax(0, 1fr) !important;
+        gap: 5px !important;
+        padding: 13px !important;
+    }
+
+    .teoria-flow-step {
+        font-size: 10px !important;
+        padding: 10px 5px !important;
+    }
+
+    .teoria-flow-arrow {
+        width: 18px !important;
+        min-width: 18px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* En móvil sí pasa a vertical. */
+@media (max-width: 650px) {
+    .teoria-flow {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        gap: 7px !important;
+        overflow: hidden !important;
+    }
+
+    .teoria-flow-step {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .teoria-flow-arrow {
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        transform: rotate(90deg) !important;
+    }
+}
+
+
+/* ============================================================
+   FLUJO RX — UNA SOLA LÍNEA, SIN CORTE Y SIN SCROLL
+   ============================================================ */
+
+.teoria-flow {
+    display: grid !important;
+
+    /* 6 pasos + 5 flechas */
+    grid-template-columns:
+        minmax(0, 1fr) 14px
+        minmax(0, 1fr) 14px
+        minmax(0, 1fr) 14px
+        minmax(0, 1fr) 14px
+        minmax(0, 1fr) 14px
+        minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    gap: 5px !important;
+    padding: 14px 10px !important;
+    margin: 24px 0 30px 0 !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+
+    background: linear-gradient(
+        135deg,
+        #E4F0E9 0%,
+        #FFFFFF 100%
+    ) !important;
+
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 18px !important;
+}
+
+/* Todos los elementos del flujo pueden encogerse */
+.teoria-flow > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Cajas de cada paso */
+.teoria-flow .teoria-flow-step {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    height: 58px !important;
+    min-height: 58px !important;
+
+    padding: 8px 5px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: rgb(255, 251, 247) !important;
+    color: #2B3A35 !important;
+
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 11px !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+
+    overflow: hidden !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+
+    box-shadow: none !important;
+}
+
+/* Primer y último paso destacados */
+.teoria-flow .teoria-flow-step:first-child,
+.teoria-flow .teoria-flow-step:last-child {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+/* Flechas: SIEMPRE horizontales */
+.teoria-flow .teoria-flow-arrow {
+    width: 14px !important;
+    min-width: 14px !important;
+    max-width: 14px !important;
+    height: 58px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #5E8776 !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    transform: none !important;
+}
+
+/* El hover no modifica el flujo */
+.teoria-flow .teoria-flow-step:hover {
+    transform: none !important;
+    background: rgb(255, 251, 247) !important;
+    color: #2B3A35 !important;
+    border-color: #A9D4C0 !important;
+    box-shadow: none !important;
+}
+
+.teoria-flow .teoria-flow-step:first-child:hover,
+.teoria-flow .teoria-flow-step:last-child:hover {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+/* Pantallas más pequeñas: sigue siendo una sola línea,
+   simplemente compactamos todavía más. */
+@media (max-width: 850px) {
+    .teoria-flow {
+        grid-template-columns:
+            minmax(0, 1fr) 10px
+            minmax(0, 1fr) 10px
+            minmax(0, 1fr) 10px
+            minmax(0, 1fr) 10px
+            minmax(0, 1fr) 10px
+            minmax(0, 1fr) !important;
+        gap: 3px !important;
+        padding: 10px 7px !important;
+    }
+
+    .teoria-flow .teoria-flow-step {
+        height: 52px !important;
+        min-height: 52px !important;
+        padding: 6px 3px !important;
+        font-size: 9px !important;
+    }
+
+    .teoria-flow .teoria-flow-arrow {
+        width: 10px !important;
+        min-width: 10px !important;
+        max-width: 10px !important;
+        height: 52px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ============================================================
+   FLUJO RX — CORRECCIÓN DEFINITIVA
+   UNA SOLA LÍNEA · SIN SCROLL · TODOS CREMA
+   ============================================================ */
+
+/* PRODUCCIÓN: 6 recuadros + 5 flechas */
+.teoria-flow:has(> :nth-child(11)) {
+    display: grid !important;
+    grid-template-columns: repeat(11, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 16px 10px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Cada recuadro ocupa 2 columnas */
+.teoria-flow:has(> :nth-child(11)) .teoria-flow-step {
+    grid-column: span 2 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    height: 58px !important;
+    min-height: 58px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 7px 5px !important;
+
+    /* TODOS CREMA */
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #5E8776 !important;
+    border-radius: 12px !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+
+    overflow: hidden !important;
+    box-shadow: none !important;
+}
+
+/* Cada flecha ocupa 1 columna */
+.teoria-flow:has(> :nth-child(11)) .teoria-flow-arrow {
+    grid-column: span 1 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 58px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #5E8776 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+
+    transform: none !important;
+}
+
+/* Los recuadros NO reaccionan al mouse */
+.teoria-flow:has(> :nth-child(11)) .teoria-flow-step:hover {
+    transform: none !important;
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+    box-shadow: none !important;
+}
+
+
+/* ============================================================
+   FLUJOS DE 5 PASOS
+   ============================================================ */
+
+.teoria-flow:has(> :nth-child(9)):not(:has(> :nth-child(11))) {
+    display: grid !important;
+    grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+.teoria-flow:has(> :nth-child(9)):not(:has(> :nth-child(11))) .teoria-flow-step {
+    grid-column: span 2 !important;
+    min-width: 0 !important;
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+.teoria-flow:has(> :nth-child(9)):not(:has(> :nth-child(11))) .teoria-flow-arrow {
+    grid-column: span 1 !important;
+}
+
+
+/* ============================================================
+   FLUJOS DE 4 PASOS
+   ============================================================ */
+
+.teoria-flow:has(> :nth-child(7)):not(:has(> :nth-child(9))) {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+.teoria-flow:has(> :nth-child(7)):not(:has(> :nth-child(9))) .teoria-flow-step {
+    grid-column: span 2 !important;
+    min-width: 0 !important;
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+.teoria-flow:has(> :nth-child(7)):not(:has(> :nth-child(9))) .teoria-flow-arrow {
+    grid-column: span 1 !important;
+}
+
+
+/* ============================================================
+   FLUJOS DE 3 PASOS
+   ============================================================ */
+
+.teoria-flow:has(> :nth-child(5)):not(:has(> :nth-child(7))) {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+.teoria-flow:has(> :nth-child(5)):not(:has(> :nth-child(7))) .teoria-flow-step {
+    grid-column: span 2 !important;
+    min-width: 0 !important;
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+}
+
+.teoria-flow:has(> :nth-child(5)):not(:has(> :nth-child(7))) .teoria-flow-arrow {
+    grid-column: span 1 !important;
+}
+
+
+/* ============================================================
+   FLECHAS — SIEMPRE HORIZONTALES
+   ============================================================ */
+
+.teoria-flow-arrow,
+.teoria-flow-arrow:hover {
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    color: #5E8776 !important;
+}
+
+
+/* ============================================================
+   PANTALLAS PEQUEÑAS
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+    .teoria-flow:has(> :nth-child(11)) {
+        gap: 3px !important;
+        padding: 10px 5px !important;
+    }
+
+    .teoria-flow:has(> :nth-child(11)) .teoria-flow-step {
+        height: 52px !important;
+        min-height: 52px !important;
+        font-size: 8px !important;
+        padding: 5px 2px !important;
+    }
+
+    .teoria-flow:has(> :nth-child(11)) .teoria-flow-arrow {
+        height: 52px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ============================================================
+   FLUJO RX LIMPIO
+   Estas clases son nuevas para no heredar reglas anteriores.
+   ============================================================ */
+
+.flujo-rx {
+    display: grid !important;
+
+    /* 6 pasos + 5 flechas */
+    grid-template-columns:
+        minmax(0, 1fr) 28px
+        minmax(0, 1fr) 28px
+        minmax(0, 1fr) 28px
+        minmax(0, 1fr) 28px
+        minmax(0, 1fr) 28px
+        minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    padding: 18px 12px !important;
+    margin: 24px 0 30px 0 !important;
+    gap: 7px !important;
+
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+
+    background: rgb(255, 251, 247) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 18px !important;
+}
+
+.flujo-rx-paso {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    height: 64px !important;
+    min-height: 64px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 7px 4px !important;
+    box-sizing: border-box !important;
+
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #5E8776 !important;
+    border-radius: 12px !important;
+
+    font-family: 'Lora', Georgia, serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+
+    overflow: hidden !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    white-space: normal !important;
+}
+
+.flujo-rx-flecha {
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    height: 64px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    color: #5E8776 !important;
+    font-size: 21px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+
+    overflow: visible !important;
+    transform: none !important;
+}
+
+/* Sin ningún efecto de hover */
+.flujo-rx-paso:hover,
+.flujo-rx-flecha:hover {
+    transform: none !important;
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border-color: #5E8776 !important;
+    box-shadow: none !important;
+}
+
+/* Pantallas medianas */
+@media (max-width: 950px) {
+    .flujo-rx {
+        grid-template-columns:
+            minmax(0, 1fr) 20px
+            minmax(0, 1fr) 20px
+            minmax(0, 1fr) 20px
+            minmax(0, 1fr) 20px
+            minmax(0, 1fr) 20px
+            minmax(0, 1fr) !important;
+        gap: 4px !important;
+        padding: 14px 7px !important;
+    }
+
+    .flujo-rx-paso {
+        height: 58px !important;
+        min-height: 58px !important;
+        font-size: 9px !important;
+        padding: 6px 2px !important;
+    }
+
+    .flujo-rx-flecha {
+        width: 20px !important;
+        min-width: 20px !important;
+        max-width: 20px !important;
+        height: 58px !important;
+        font-size: 17px !important;
+    }
+}
+
+/* Móvil */
+@media (max-width: 650px) {
+    .flujo-rx {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+    }
+
+    .flujo-rx-paso,
+    .flujo-rx-flecha {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .flujo-rx-flecha {
+        height: 22px !important;
+    }
+}
+
+/* ============================================================
+   EJEMPLO INTERACTIVO — MEJOR CONTRASTE Y COLOR
+   ============================================================ */
+
+.teoria-interactive {
+    background: linear-gradient(135deg, rgb(255, 251, 247) 0%, #DFF3EA 100%) !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 18px !important;
+    color: #2B3A35 !important;
+}
+
+/* Título "Ejemplo interactivo" */
+.teoria-interactive h3,
+.teoria-interactive h4 {
+    color: #2B3A35 !important;
+}
+
+/* Texto explicativo */
+.teoria-interactive p {
+    color: #2B3A35 !important;
+}
+
+/* ============================================================
+   CAJAS DE LOS SLIDERS
+   ============================================================ */
+
+.teoria-slider-box {
+    background: #F1F7F3 !important;
+    border: 1px solid #A9D4C0 !important;
+    border-radius: 14px !important;
+    color: #2B3A35 !important;
+}
+
+/* "Corriente (mA)" y "Tiempo (s)" */
+.teoria-slider-box label,
+.teoria-slider-box .dash-slider-label,
+.teoria-slider-box span {
+    color: #2B3A35 !important;
+}
+
+/* ============================================================
+   NÚMERO DEL SLIDER
+   ============================================================ */
+
+.teoria-slider-box input {
+    background: #2B3A35 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #5E8776 !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+}
+
+/* ============================================================
+   VALORES / MARCAS DEL SLIDER
+   ============================================================ */
+
+.teoria-slider-box .rc-slider-mark-text {
+    color: #5E8776 !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+}
+
+.teoria-slider-box .rc-slider-mark-text-active {
+    color: #2B3A35 !important;
+    font-weight: 700 !important;
+}
+
+/* Línea del slider */
+.teoria-slider-box .rc-slider-rail {
+    background: #A9D4C0 !important;
+    height: 5px !important;
+}
+
+/* Parte recorrida */
+.teoria-slider-box .rc-slider-track {
+    background: #5E8776 !important;
+    height: 5px !important;
+}
+
+/* Punto seleccionado */
+.teoria-slider-box .rc-slider-handle {
+    background: #2B3A35 !important;
+    border: 2px solid #5E8776 !important;
+    box-shadow: 0 0 0 3px rgba(199, 191, 174, 0.18) !important;
+}
+
+/* ============================================================
+   RESULTADO mAs
+   ============================================================ */
+
+.teoria-mas-result {
+    background: #2B3A35 !important;
+    border: 1px solid #5E8776 !important;
+    border-radius: 14px !important;
+    color: #FFFFFF !important;
+}
+
+.teoria-mas-result .teoria-mas-label {
+    color: #A9D4C0 !important;
+    font-weight: 700 !important;
+}
+
+.teoria-mas-result .teoria-mas-value,
+#teoria-mas-output {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+}
+/* Ajuste para íconos de Font Awesome en el menú */
+.menu-icono {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 15px !important; /* Un poco más grande que antes */
+    color: inherit !important;  /* Hereda el color del texto (crema/beige) */
+}
+/* Alineación de íconos dentro de las pestañas de teoría */
+.teoria-tab span, .teoria-tab-selected span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* Tamaño de los íconos dentro de las pestañas */
+.teoria-tab i, .teoria-tab-selected i {
+    font-size: 14px;
+    color: inherit; /* Hereda el color del texto de la pestaña */
+}
