@@ -1,0 +1,31 @@
+- Concepto de Atenuación:
+  * Reducción de la intensidad/fuerza del haz de rayos X a medida que atraviesa la materia, debido a procesos combinados de absorción y dispersión.
+- Unidades e Intensidad del Haz:
+  * Fluencia de Fotones (Phi = N / A) y Tasa de Fluencia (phi = N / (A * delta_t)).
+  * Fluencia de Energía (Psi = N * h * v / A) e Intensidad (I = Psi / delta_t = E * phi).
+  * Espectro Polienergético S(E): Distribución de densidad de fotones por unidad de energía.
+- Ley Fundamental de Atenuación:
+  * Para un haz estrecho y monoenergético: N = N0 * exp(-mu * x) o I = I0 * exp(-mu * x), donde mu es el coeficiente de atenuación lineal (cm^-1) y x es el espesor del material.
+  * Capa de Valor Medio (HVL - Half Value Layer): Espesor de material necesario para reducir la intensidad del haz a la mitad: HVL = ln(2) / mu = 0.693 / mu.
+  * Para fuentes polienergéticas y materiales heterogéneos, mu varía con la energía E y la posición, utilizándose el concepto de "energía efectiva".
+  * Geometría de Haz Ancho: Permite que fotones dispersos fuera del eje lleguen al detector, incrementando la señal registrada respecto al haz estrecho y produciendo "ablandamiento del haz" (beam softening).
+- Mecanismos Principales de Interacción Fotón-Materia:
+  1. Efecto Fotoeléctrico:
+     - El fotón incidente interactúa con un electrón ligado (capa K) y es COMPLETAMENTE ABSORBIDO. El electrón es expulsado como fotoelectrón con energía cinética E_pc = h*v - E_b. Se emite radiación característica secundaria o electrones Auger.
+     - Probabilidad de ocurrencia: Proporcional a Z_efectivo^4 / (h*v)^3. Es el mecanismo primario que proporciona CONTRASTE entre tejidos suaves y hueso a bajas energías (<30 keV).
+     - Borde K (K-edge): Discontinuidad/aumento abrupto en la probabilidad de absorción fotoeléctrica cuando la energía del fotón excede ligeramente la energía de enlace de la capa K del material.
+  2. Dispersión Compton:
+     - El fotón incidente colisiona con un electrón libre/débilmente ligado de las capas externas, expulsando al electrón Compton. El fotón se desvía un ángulo theta perdiendo parte de su energía: h*v' = (h*v) / [1 + (1 - cos(theta)) * (h*v) / (m0 * c^2)].
+     - La máxima pérdida de energía del fotón ocurre en retrodispersión (theta = 180°).
+     - Probabilidad de ocurrencia: Proporcional a la densidad electrónica (ED = N_A * Z / W_m ~ 3 x 10^26 e-/kg), siendo casi INDEPENDIENTE del número atómico Z.
+     - Es el mecanismo dominante a energías de diagnóstico medio/altas (>30-60 keV) y la principal fuente de RUIDO/NIEBLA en la imagen.
+  3. Dispersión Rayleigh (Coherente):
+     - Interacción no ionizante elástica a muy bajas energías (<10% de las interacciones).
+- Dispositivos de Modificación del Haz:
+  * Filtración: Absorción preferencial de fotones de baja energía antes de penetrar al paciente. Incluye filtración inherente (tubo, vidrio, aceite) y añadida (láminas de Aluminio 1-3 mm Al/Eq, Cobre). Causa "endurecimiento del haz" (beam hardening), aumentando su energía efectiva media.
+  * Restricción del Haz: Uso de diafragmas, conos/cilindros y colimadores de hojas móviles plomadas para limitar el campo de visión (FOV) y reducir la radiación dispersa.
+  * Filtros de Compensación: Aluminio o plástico plomado moldeado (en cuña o canaleta) para compensar variaciones de grosor anatómico (ej. pie, tórax).
+  * Agentes de Contraste: Sustancias químicas con alto Z para aumentar la absorción fotoeléctrica por Borde K. Yodo (Z=53, E_k=33.2 keV) y Bario (Z=56, E_k=37.4 keV). Se usa aire/gas como contraste negativo.
+  * Rejillas Anti-dispersoras (Grids): Tiras finas de plomo alternadas con plástico/aluminio. Absorbe los fotones dispersos fuera de eje. Caracterizadas por la Razón de Rejilla (grid ratio r = h / b, típ. 6:1 a 16:1) y el Factor de Conversión de Rejilla (GCF = 3 a 8). Regla práctica: usar rejilla con kVp > 60 o espesores de tejido > 10 cm.
+  * Rejillas Móviles (Potter-Bucky): Mueven la rejilla 2-3 cm durante la exposición para difuminar las líneas de plomo en la imagen.
+  * TÉCNICAS adiciones: Espacio de aire (Air gap) y ranuras de escaneo (Scanning slits).

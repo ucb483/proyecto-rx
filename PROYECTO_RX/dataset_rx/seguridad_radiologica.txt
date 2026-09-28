@@ -1,0 +1,18 @@
+- Magnitudes y Unidades Dosimétricas:
+  * Exposición (X): Medida de la ionización producida por fotones en aire. Unidad SI: C/kg. Unidad tradicional: Roentgen (R). 1 C/kg = 3876 R; 1 R = 2.58 x 10^-4 C/kg.
+  * Dosis Absorbida (D): Energía impartida por la radiación por unidad de masa. Unidad SI: Gray (Gy) -> 1 Gy = 1 J/kg = 100 rads. 1 rad = 100 erg/g. En tejido blando, 1 R de exposición produce ~1 rad de dosis absorbida.
+  * Kerma (K): Kinetic Energy Released per Unit Mass. Energía transferida directamente a partículas cargadas por unidad de masa (Gy).
+  * Factor f: Factor de conversión de exposición a dosis D = f * X, donde f = 0.87 * [(mu/rho)_material / (mu/rho)_aire].
+  * Transferencia Lineal de Energía (LET): Energía transferida por la radiación al medio por unidad de longitud.
+  * Dosis Equivalente (H): Pondera el daño biológico según el tipo de radiación H = D * Q. Factor de Calidad Q: Rayos X, gamma y electrones Q = 1; Neutrones/Protones Q = 10; Partículas alfa Q = 20. Unidad SI: Sievert (Sv) -> 1 Sv = 100 rems. En rayos X médicos, Sv = Gy (H = D).
+  * Dosis Efectiva (D_efectiva): Suma de dosis equivalentes en diferentes órganos H_j multiplicadas por sus factores de ponderación tisular w_j (suma w_j = 1): D_efectiva = Suma(H_j * w_j). Evalúa el riesgo estocástico global (somático y genético).
+- Dosis Típicas y Exposición Ambiental:
+  * Dosis efectiva anual promedio por radiación natural de fondo (excluyendo procedimientos médicos): ~300 mrem (~3 mSv).
+  * Radiografía de tórax de rutina: ~3 a 4 mrem (0.03 - 0.04 mSv) / 3-4 mR.
+  * Estudios fluoroscópicos o tomográficos: Rango de varios rems.
+- Efectos Biológicos de la Radiación Ionizante:
+  * Efectos celulares: Paso sin daño, daño reparado, mutación viable (riesgo de cáncer) o muerte celular.
+  * Mecanismos de daño: Directo (ruptura de cadenas de ADN) e Indirecto (radiólisis del agua y formación de radicales libres OH*, H*).
+  * Riesgo Primario en Diagnóstico: Carcinogénesis radiogénica. En la práctica clínica se asume el modelo lineal sin umbral (cualquier dosis incrementa proporcionalmente el riesgo).
+- Principios de Radioprotección (ALARA):
+  * Justificación del examen médico, Optimización de parámetros, Colimación estricta, Blindaje plomado (muros, vidrios plomados, delantales plomados), Distanciamiento de la fuente y Filtración adecuada.
